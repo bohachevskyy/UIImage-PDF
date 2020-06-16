@@ -1,14 +1,14 @@
 //
-//  SkychutePDFView.m
+//  CustomPDFView.m
 //
 //  Created by Nigel Barber on 15/10/2011.
 //  Copyright 2011 Mindbrix Limited. All rights reserved.
 //
 
-#import "SkychutePDFView.h"
+#import "CustomPDFView.h"
 
 
-@implementation SkychutePDFView
+@implementation CustomPDFView
 
 @synthesize page = m_page;
 @synthesize resourceName = m_resourceName;
@@ -33,7 +33,7 @@
 {
 	m_resourceName = resourceName;
 	
-    self.resourceURL = [ SkychutePDFView resourceURLForName: self.resourceName ];
+    self.resourceURL = [ CustomPDFView resourceURLForName: self.resourceName ];
 }
 
 
@@ -54,7 +54,7 @@
 
 +(CGRect) mediaRect:(NSString *)resourceName
 {
-    return [ SkychutePDFView mediaRectForURL:[ SkychutePDFView resourceURLForName: resourceName ]];
+    return [ CustomPDFView mediaRectForURL:[ CustomPDFView resourceURLForName: resourceName ]];
 }
 
 
