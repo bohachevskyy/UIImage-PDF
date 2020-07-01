@@ -351,9 +351,9 @@ static BOOL _shouldCacheOnDisk = YES;
 +(UIImage *) imageWithPDFURL:(NSURL *)URL atWidth:(CGFloat)width atPage:(NSUInteger)page
 {
     CGRect mediaRect = [ CustomPDFView mediaRectForURL:URL atPage:page ];
-    CGFloat aspectRatio = mediaRect.size.width / mediaRect.size.height;
+    CGFloat aspectRatio = mediaRect.size.height / mediaRect.size.width;
     
-    CGSize size = CGSizeMake( width, ceil( width / aspectRatio ));
+    CGSize size = CGSizeMake( width, ceil( width * aspectRatio ));
     
     return [ UIImage imageWithPDFURL:URL atSize:size atPage:page ];
 }
